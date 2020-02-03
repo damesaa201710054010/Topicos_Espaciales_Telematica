@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js  ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "api-key-auth": "^0.2.2",
+    "bcrypt-nodejs": "0.0.3",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.24.0",
+    "mongoose": "^5.8.11"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.2"
+  }
+}
