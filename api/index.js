@@ -12,8 +12,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //Router
-app.use('/api/devices/', require('./routes/device.routes'));
-app.use('/api/user', require('./routes/front.routes'));
+app.use('/api/data/', require('./routes/data.route'));
+//app.use('/api/user', require('./routes/user.route'));
 
 //the app start
 app.listen(app.get('port'), () => {

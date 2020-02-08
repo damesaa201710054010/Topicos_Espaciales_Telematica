@@ -1,34 +1,33 @@
 const express = require('express');
-const router = express.Router();
-const device = require('../models/device');
+const dataSchema = require('../models/data.model');
+const data = {};
 
-
-router.post('/', async (req, res) => {
+data.post = async (req, res) => {
     const { user,
-    temperature,
-    humidity,
-    latitude,
-    longitude,
-    hora,
-    fecha} = req.body;
-    const newDevice = new device ({ user,
+        temperature,
+        humidity,
+        latitude,
+        longitude,
+        hora,
+        fecha} = req.body;
+    const newData = new dataSchema ({ user,
         temperature,
         humidity,
         latitude,
         longitude,
         hora,
         fecha});
-    console.log(newDevice);
-    await newDevice.save();
-    res.json({
-        "task" : "nice"
-    })
-});
+        console.log(newData);
+        await newData.save();
+        res.json({
+            "task" : "nice"
+        });
+};
 
-router.get('/', async (req, res) => {
-    const data = await device.find();
+data.get = async (req, res) => {
+    const data = await dataSchema.find();
     console.log(data);
     res.json(data);
-});
+};
 
-module.exports = router;
+module.exports = data;

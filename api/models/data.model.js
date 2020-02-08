@@ -9,7 +9,7 @@ const dataSchema = new Schema({
     latitude: {type: Number, required: true},
     longitude: {type: Number, required: true},
     hora: {type: String, required: true},
-    fecha: {type: String, required: true}
+    fecha: {type: Date, required: true}
 });
 
 module.exports = mongoose.model('data', dataSchema);
