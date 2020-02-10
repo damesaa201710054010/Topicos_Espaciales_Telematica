@@ -66,8 +66,8 @@ export default class admin extends Component {
                         <th>humidity</th>
                         <th>latitude</th>
                         <th>longitude</th>
-                        <th>hora</th>
-                        <th>fecha</th>
+                        <th>time</th>
+                        <th>date</th>
                     </tr>
                 </thead>
                 <tbody>
