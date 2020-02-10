@@ -6,6 +6,8 @@ authorization.ensureToken = async (req, res, next) => {
     console.log(bearerHeader);
     if(typeof bearerHeader !== 'undefined'){
         const bearer = bearerHeader.split(" ");
+        console.log(bearer[0]);
+        console.log(bearer[1]);
         const bearerToken= bearer[1];
         req.token = bearerToken;
         next(); 

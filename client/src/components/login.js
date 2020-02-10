@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './login.css';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Redirect } from 'react-router-dom';
 
 export default class login extends Component {
     constructor(props) {
@@ -9,25 +9,57 @@ export default class login extends Component {
         this.state = {
             user: '',
             password: '',
-            log
+            log: false
         }
 
-        this.onChange = this.onChange.bind(this)
-        this.submitForm = this.submitForm.bind(this)
+        this.onChange = this.onChange.bind(this);
+        this.submitForm = this.submitForm.bind(this);
+        
     }
 
     onChange(e) {
+        const {name, value} = e.target;
         this.setState({
-            [e.target.name]: e.target.value
+            [name]: value
         })
     }
 
     submitForm(e) {
-        e.preventDefault()
-        const { user, password } = this.state
-    }   
+        e.preventDefault();
+        fetch('http://127.0.0.1:8000/user/login', {
+            method: 'POST', 
+            body: JSON.stringify({
+                user: this.state.user,
+                password: this.state.password
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            localStorage.setItem("token", data.token);
+            sessionStorage.setItem('user', data);
+            this.setState({
+                redirect: true
+            })
+        })
+        .catch((err) =>{
+            console.log("User is not register");
+            alert("User is not register");
+        })
+    }
 
     render() {
+        if(this.state.redirect){
+            return(<Redirect to = {'/data'}></Redirect>);
+        }
+
+        if(sessionStorage.getItem("user")){
+            return(<Redirect to = {'/data'}></Redirect>);   
+        }
+
         return (
             <div className="App"  >
                 <div className="App__Aside">

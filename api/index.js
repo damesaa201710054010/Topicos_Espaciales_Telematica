@@ -5,7 +5,7 @@ const cors = require('cors');
 const { mongoose } = require('./database');
 
 //setting, get the so port or local port like final option
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8000);
 app.use(cors());
 //middlewear
 app.use(morgan('dev'));

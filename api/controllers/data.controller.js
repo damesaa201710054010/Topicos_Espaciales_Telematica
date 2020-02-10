@@ -37,7 +37,8 @@ data.get = async (req, res) => {
         if(err){
             res.sendStatus(403);
         }else{
-            const ress = await dataSchema.find({user: dataj.username});
+            console.log(dataj.user);
+            const ress = await dataSchema.find({user: dataj.user});
             console.log(ress);
             res.json(ress);
         }
