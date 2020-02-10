@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "3cdb5f9c-d1c8-427f-8d40-49219f99985d",
+		"name": "Device Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post requests",
+			"item": [
+				{
+					"name": "Get data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": \"arduino0\",\n    \"temperature\": \"23\",\n    \"humidity\": \"40\",\n    \"latitude\": 6.2518400,\n    \"longitude\": -75.5635900,\n    \"hora\": \"20:42\",\n    \"fecha\": \"1/02/2020\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/api/devices/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"devices",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "In this folder, there are post requests",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Save Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
