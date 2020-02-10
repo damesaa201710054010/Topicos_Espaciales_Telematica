@@ -1,5 +1,5 @@
 # Topicos_Espaciales_Telematica
-# Este proyecto tiene como fin construir una app para almacenamiento, procesamiento y visualizacion de datos asociados a un usuario aplicando herramientas de desarrollo web modernas ademas del conocimiento sobre desarrollo web
+## Este proyecto tiene como fin construir una app para almacenamiento, procesamiento y visualizacion de datos asociados a un usuario aplicando herramientas de desarrollo web modernas ademas del conocimiento sobre desarrollo web
 
 # Requisitos funcionales
 # - Se debe contar un incio de sesion para autenticacion de usuarios
